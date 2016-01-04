@@ -1,6 +1,6 @@
 # README
 ----
-## My Blog [Visit Blog!](http://blog.aniliyidogan.com)
+## My Blog [Visit!](http://blog.aniliyidogan.com)
 ### Start
 
 `$ git clone https://github.com/aniliyidogan/blog.git`
@@ -18,7 +18,7 @@
 ### Finish
 You can visit localhost:3000
 
-### İnformations
+### Informations
 * Ruby 2.2.1
 * Rails 4.2.3
 * Materialize Css
