@@ -1,0 +1,21 @@
+<div id="yorum", class="modal bottom-sheet" >
+  <div class="modal-content">
+  <%= form_for ([@post, @post.comments.build]) do |f| %>
+  <div class="input-field col s12 m12 l3">
+    <%= f.text_field :name, id:"name", length:"20" %>
+    <%= f.label "İsmin*", for:"name" %>
+  </div>
+  <div class="input-field col s12 m12 l3">
+    <%= f.text_field :website, id:"website", type:"url", class:"validate" %>
+    <%= f.label "Blog veya linkedin adresin", for:"website" %>
+  </div>
+  <div class="input-field col s12 m12 l3">
+    <%= f.text_field :body, id:"comment", length:"164" %>
+    <%= f.label "Yorumun*", for:"comment" %>
+  </div>
+  <div class="col s12 m12 l3">
+    <button class="btn waves-effect" name="action" type="submit"><i class="material-icons" style="font-size:2.1rem;">&#xE163;</i></button><br>
+  </div>
+  <% end %>
+  </div>
+</div>

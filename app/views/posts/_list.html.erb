@@ -1,0 +1,45 @@
+<div class="row">
+<% @hellos.each do |hello| %>
+  <div class="col s12 m12 l12">
+    <div class="words">
+      <%= hello.words %>
+    </div>
+  </div>
+<% end  %>
+</div>
+<% @posts.each do |post| %>
+  <div class="col s12 m12 l12">
+    <div class="post">
+        <div class="parallax-container" style="border-bottom-color:<%="#{post.color}"%>;">
+      <div class="parallax">
+        <%= image_tag(post.image) %>
+      </div>
+    </div>
+    <%= link_to (post_path(post)) do %>
+    <div class="btn-floating btn-large waves-effect" style="margin-top:-38px;">
+      <i class="material-icons" id="post-index-continue">&#xE037;</i>
+    </div>
+    <% end %>
+    <div class="title" id="post-index-title">
+      <% if (post.title).length > 40 %>
+      <%= (post.title).first(41) %>...
+      <% else %>
+      <%= post.title %>
+      <% end %>
+    </div>
+    <div class="row">
+      <div class="col s2 m2 l2">
+        <div class="post-bar">
+        <center>
+          <i class="material-icons" id="post-index-icons">&#xE192;</i><br>
+          <%= (post.created_at).strftime("%d %B")%><br>
+        </center>
+        </div>
+      </div>
+      <div class="col s10 m10 l10">
+        <%= raw post.body.first(340) %>...
+      </div>
+    </div>
+  </div>
+</div>
+<% end %>

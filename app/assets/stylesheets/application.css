@@ -1,0 +1,311 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *= require materialize.min
+ *= require_self
+ *= require social-share-button
+ *= require froala_editor.min.css
+*= require froala_style.min.css
+*= require font-awesome
+ */
+
+
+html::-webkit-scrollbar              { /* 1 */  background-color: #64b5f6; width: 6.4px;}
+html::-webkit-scrollbar-thumb        { /* 5 */
+  background-color: #2980b9;
+  border-top-style: solid;
+  border-top-width: 9px;
+  border-top-color: #f1f8e7;
+  border-bottom-style: solid;
+  border-bottom-width: 9px;
+  border-bottom-color: #f1f8e7;
+}
+#color{
+	border-bottom-color: #fff;
+}
+html{
+  height: 100%;
+}
+
+body{
+  height: 100%;
+  width: 930px;
+  margin: 0 auto;
+  background-color: #f1f8e7;
+  font-family: 'Oxygen', sans-serif;
+  /*font-family: 'ABeeZee', sans-serif;*/
+}
+
+a{ color: #006064; }
+
+hr{
+   border: 0; height: 0; border-top: 1px solid rgba(0, 0, 0, 0.1); border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+#nav{
+  border-bottom-color: #689f38;
+  border-bottom-style: solid;
+  border-bottom-width: .34rem;
+  box-shadow: 1px 1px 12px #bdc3c7;
+  background-color: #9ce769;
+}
+
+::-moz-selection { /* Firefox */
+  color: #fff !important;
+  background-color: #9ccc65 !important;
+}
+
+::selection{
+  color: #fff !important;
+  background-color: #9ccc65 !important;
+}
+
+.page-title{
+  color: #fff;
+  font-size: 36px;
+
+  text-align: left;
+}
+
+.name{
+  color: #7f8c8d;
+  font-size: 20px;
+  font-style: normal;
+
+  padding-left: 50%;
+  opacity: 0.8;
+}
+
+.words{
+  color: #000;
+  opacity: 0.5;
+  margin:10px;
+  font-size:25px;
+  font-style: italic;
+
+  text-align: center;
+}
+
+.hi{
+  font-size: 29px;
+  text-align: center;
+}
+
+.profile{
+  border-style: solid;
+  border-width: 0.16rem;
+  border-color: #f1c40f;
+  border-bottom-color: #2ecc71;
+  border-top-color: #3498db;
+  border-radius: 111px;
+  background-image: url(https://s-media-cache-ak0.pinimg.com/236x/70/6d/b8/706db86e110794ec8ab2da849e22961b.jpg);
+  width: 222px;
+  height: 222px;
+  box-shadow: 1px 1px 8px #bdc3c7;
+}
+
+.parallax-container{
+  height: 250px;
+  margin-left: -15px;
+  margin-top: -15px;
+  margin-right: -15px;
+  border-bottom-style: solid;
+  border-bottom-width: .34rem;
+	border-bottom-color: #0091ea;
+}
+#tag-show-parallax{
+  height: 164px;
+}
+
+.title{
+  padding: 5px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 30px;
+}
+
+.post{
+  box-shadow: 1px 1px 5px #bdc3c7;
+  opacity: 0.9;
+  background-color: #FFFFFF;
+  margin-bottom: 30px;
+  padding: 15px;
+  font-size: 17px;
+  border-radius: 4px;
+}
+
+#post-show-image{
+	height: 200px;
+	margin-top: -20px;
+}
+
+.post-bar{
+  font-family: 'Montserrat', sans-serif;
+  font-size: 12px;
+}
+
+.time{
+  font-family: 'Montserrat', sans-serif;
+  font-size: 11px;
+}
+
+.card{
+  border-top-style: solid;
+  border-top-width: 0.64rem;
+  border-top-color: #0091ea;
+  background-color: #00b0ff;
+
+  font-weight: 500;
+  font-size: 19px;
+  border-radius: 3px;
+}
+#card-bar{
+  background-color: #00b0ff;
+  margin-left: -15px;
+  margin-right: -15px;
+  margin-top: -15px;
+  font-size: 17px;
+  padding-top: 9px;
+  border-top-color: #0091ea;
+  border-top-style: solid;
+  border-top-width: 0.5rem;
+  /*border-right-color: #0091ea;
+  border-right-style: solid;
+  border-right-width: 0.64rem;*/
+}
+#card-bar-font{
+  color: #fff;
+  opacity: 0.9;
+}
+
+.scrollToTop{
+  display: none;
+  text-align: center;
+	text-decoration: none;
+	position:fixed;
+	bottom: 18%;
+	right: 200px;
+}
+#plane{
+  font-size: 2.5rem;
+}
+.scrollToTop:hover{
+	text-decoration:none;
+}
+
+#home-post{
+  text-align: center;
+  margin-top: 20px;
+  border-top-color: #f1c40f;
+  border-top-style: solid;
+  border-top-width: 0.32rem;
+}
+
+#home-hi{
+  border-bottom-color: #00b0ff;
+  border-bottom-style: solid;
+  border-bottom-width: 0.32rem;
+}
+
+#post-words{
+  margin:11px;
+  font-size:25px;
+  text-align: center;
+}
+
+#post-words-icons{
+  font-size:1.84rem;
+}
+
+#post-index-title{
+  margin-top:-10px;
+}
+
+#post-index-icons{
+  font-size:1.7rem;
+}
+
+#post-index-continue{
+  font-size:3.3rem;
+}
+
+#info{
+  position: center;
+  font-size: 16px;
+
+}
+
+#home-icons-font{
+  font-size: 2.1rem;
+}
+
+#tag-index-continue{
+  font-size:3.3rem;
+}
+
+#tag-card-title{
+  font-size:16px;
+}
+
+#tag-card-icons{
+  font-size: 2rem;
+  color: #000;
+  opacity: 0.3;
+}
+
+#tag-post-title{
+  font-size:20px;
+  margin-top:-20px;
+}
+
+#app-icons-font{
+  font-size:2rem;
+  color: #000;
+  opacity: 0.3;
+}
+
+.notice{
+  text-align: center;
+  color: #1b5e20;
+}
+
+.alert{
+  text-align: center;
+  color: #b71c1c;
+}
+
+.line{
+  padding: 0.34rem;
+  background-color: #ffffff;
+  margin-bottom: 10px;
+}
+
+.wrapper {
+  min-height: 100%;
+  height: auto !important;
+  height: 100%;
+  margin-bottom: 0 auto -40px;
+}
+
+.footer, .push{ height: 40px; }
+
+footer{
+  box-shadow: 1px 1px 10px #bdc3c7;
+  background-color: #64dd17;
+  font-family: 'Montserrat', sans-serif;
+  opacity: 0.6;
+  text-align: center;
+  padding-bottom: 5px;
+}
+
+button{
+  background-color: #f1c40f !important;
+}

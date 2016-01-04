@@ -1,0 +1,90 @@
+<% content_for :title, @post.title %>
+<% content_for :description, (@post.body.first(160)).html_safe %>
+<div  class="row">
+<div class="col s12 m12 l12">
+  <div class="post" style="font-size:18px;">
+    <div class="card-content z-depth-1" id="card-bar">
+      <div class="row" style="padding-bottom:10px;">
+        <div class="col s5 m5 l5">
+        <span style="font-size:13px;color:#fff;"><%= @post.title %></span>
+        </div>
+      <div class="col s2 m2 l2">
+        <center id="card-bar-font">
+          <i class="material-icons" style="font-size:1.4rem;">&#xE192;</i>
+          <%= (@post.created_at).strftime("%d %B") %>
+        </center>
+      </div>
+      <div class="col s3 m3 l3">
+        <center id="card-bar-font">
+          <% @tags.each do |tag| %>
+            <i class="material-icons" style="font-size:1.4rem;">&#xE54E;</i>
+            <%= link_to tag.name, tag_path(tag) %>&nbsp;&nbsp;
+          <% end %>
+        </center>
+      </div>
+      <div class="col s2 m2 l2">
+        <span style="padding-top:5px;"><%= social_share_button_tag(@post.title) %></span>
+      </div>
+    </div>
+  </div>
+  <div class="parallax-container" id="post-show-image">
+    <div class="parallax">
+      <%= image_tag(@post.image) %>
+    </div></div>
+  <%= raw @post.body %>
+  </div>
+  <%= render 'comments/form' %>
+  <center>
+    <a class="waves-effect waves-light btn modal-trigger" href="#yorum">
+      <b>Yorumla</b>
+    <i class="material-icons right" style="font-size:1.1rem;">&#xE0B9;</i></a>
+  </center>
+</div>
+
+<% @comments.each do |comment| %>
+<% if comment.chech?  %>
+<div class="col s4 m4 l4">
+  <div class="card">
+      <div class="card-content white-text">
+        <span class="card-title">
+          <center>
+            <%= link_to comment.name, comment.website %>
+          </center>
+        </span>
+        <div class="time">
+          <div class="row" style="opacity:0.85;">
+            <div class="col s1 m1 l1">&nbsp;</div>
+            <div class="col s5 m5 l5">
+              <center>
+                <i class="material-icons" style="font-size:1.64rem;">&#xE192;</i><br>
+                <%= (comment.created_at).strftime("%d %B") %>
+              </center>
+            </div>
+            <div class="col s5 m5 l5">
+              <center>
+                <i class="material-icons" style="font-size:1.64rem;">&#xE7FD;</i><br>
+                @<%= (((comment.name.first(14)).gsub(/[ĞğŞşİıÇçÖöÜü]/, 'Ğ' => 'g', 'ğ' => 'g', 'Ş' => 's', 'ş' => 's', 'İ' => 'i', 'ı' => 'i', 'Ç' => 'c', 'ç' => 'c', 'Ö' => 'o', 'ö' => 'o', 'Ü' => 'u', 'ü' => 'u')).delete(' ')).downcase  %>
+              </center>
+            </div>
+            <div class="col s1 m1 l1">&nbsp;</div>
+          </div>
+          <span style="font-size:16px;">
+            <%= comment.body %>
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <% elsif @comments.count < 1 %>
+  <div class="col s12 m12 l12">
+    <div class="card">
+      <span class="card-title">
+        <center style="padding:3px;">
+          Henüz bir yorum yok. Fakat olsun istiyorsan fikrini belirtebilirsin. Bekliyorum.
+        </center>
+      </span>
+    </div>
+  </div>
+  <% end %>
+<% end %>
+</div>

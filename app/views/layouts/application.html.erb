@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <% set_meta_tags title: yield(:title) %>
+    <% set_meta_tags description: yield(:description) %>
+    <title><%= yield(:title) %></title>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+    <%= auto_discovery_link_tag :rss, posts_url(:format => :rss) %>
+    <%= csrf_meta_tags %>
+    <link href='https://fonts.googleapis.com/css?family=ABeeZee|Montserrat|Oxygen:400' rel='stylesheet' type='text/css'>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+     <%= favicon_link_tag 'favicon.ico' %>
+  </head>
+    <body>
+      <div class="wrapper">
+        <div class="row" id="nav">
+          <div class="col s10 m10 l10">
+            <div class="page-title">
+              <% if (yield(:title)).length > 27 %>
+              <%= (yield(:title)).first(28) %>...
+              <% else %>
+              <%= yield(:title) %>
+              <% end %>
+            </div>
+          </div>
+          <div class="col s1 m1 l1">
+            <%= link_to posts_path do %>
+            <span class="btn-floating btn-large waves-effect waves-light lime">
+              <i class="material-icons" id="app-icons-font">&#xE8D2;</i></span>
+              <% end %>
+          </div>
+          <div class="col s1 m1 l1">
+            <%= link_to root_path do %>
+            <span class="btn-floating btn-large waves-effect waves-light light-green">
+              <i class="material-icons" id="app-icons-font">&#xE88A;</i></span>
+              <% end %>
+          </div>
+      </div>
+        <div class="row">
+          <% if flash[:alert] %>
+            <div class="alert"><%= flash[:alert] %></div>
+          <% end %>
+          <% if flash[:notice] %>
+            <div class="notice"><%= flash[:notice] %></div>
+          <% end %>
+          <div class="se-pre-con"></div>
+        <%= yield %>
+        </div>
+        <div class="push"></div>
+    </div>
+    <div class="footer">
+    <footer>
+      <div class="line z-depth-1"></div>
+    <a href="https://github.com/rails/rails"> Ruby on Rails </a>| Copyleft 2015 |<a href="https://github.com/Dogfalo/materialize"> Materialize Css </a>
+      </div>
+    </footer>
+    <a href="#" class="scrollToTop waves-effect btn-floating btn-large"><i class="material-icons" id="plane">&#xE53D;</i></a>
+  </body>
+</html>

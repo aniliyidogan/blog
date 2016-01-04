@@ -1,0 +1,18 @@
+<% content_for :title, "Yazılarım" %>
+<% content_for :description, "Yazılar ve Paylaşımlar" %>
+<div class="col s10 m10 l10">
+  <%= render 'list' %>
+  <div class="row">
+    <div class="col s12 m12 l12">
+      <center>
+        <b>
+          <%= link_to_previous_page @posts, 'Gerİ', class:"btn waves-effect" %>
+        </b>
+        <b>
+          <%= link_to_next_page @posts, 'İlerİ', class:"btn waves-effect" %>
+        </b>
+      </center>
+    </div>
+  </div>
+</div>
+<%= render 'tags/list' %>

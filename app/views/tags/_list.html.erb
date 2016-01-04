@@ -1,0 +1,12 @@
+<% @tags.each do |tag| %>
+<div class="col s2 m2 l2">
+  <div class="card" style="padding:10px;">
+      <span class="card-title" id="tag-card-title">
+          <i class="material-icons left" id="tag-card-icons">&#xE54E;</i>
+          <%= link_to tag_path(tag) do %>
+          <%= tag.name %>
+          <% end %>
+      </span>
+  </div>
+</div>
+<% end %>

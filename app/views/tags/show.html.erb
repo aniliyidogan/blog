@@ -1,0 +1,35 @@
+<% content_for :title, "#{@tag.name} etiketi" %>
+<% @posts.each do |post| %>
+<div class="col s6 m6 l6">
+  <div class="post" id="post">
+        <div class="parallax-container" id="tag-show-parallax" style="border-bottom-color: <%="#{post.color}"%>;">
+      <div class="parallax">
+        <%= image_tag(post.image) %>
+      </div>
+    </div>
+    <%= link_to (post_path(post)) do %>
+      <div class="btn-floating btn-large waves-effect" style="margin-top:-32px;margin-left:364px;"><i class="material-icons" id="tag-index-continue">&#xE037;</i></div>
+    <% end %>
+    <div class="title" id="tag-post-title">
+      <div class="row">
+        <div class="col s3 m3 l3">
+          <div class="time">
+            <center>
+              <i class="material-icons" style="font-size:1.8rem;">&#xE192;</i><br>
+              <%= (post.created_at).strftime("%d %B") %>
+            </center>
+          </div>
+        </div>
+        <div class="col s9 m9 l9">
+        <% if (post.title).length > 47 %>
+          <%= (post.title).first(48) %>...
+        <% else %>
+          <%= post.title %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+<% end %>
+</div>
