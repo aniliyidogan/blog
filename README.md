@@ -22,7 +22,6 @@ You can visit localhost:3000
 * Ruby 2.2.1
 * Rails 4.2.3
 * Materialize Css
-#### Gem List
 * rails_admin
 * devise
 * friendly_id
@@ -30,6 +29,5 @@ You can visit localhost:3000
 * wysiwyg-rails
 * meta-tags
 * social-share-button
-#### Database
 * development -> sqlite3
 * production  -> pg
